@@ -1,0 +1,31 @@
+The following is a list of required software that needs to be installed
+prior to using nessquik.
+
+I list the specific versions here because that's what I have on my development
+systems. I make no guarentees that nessquik will work in any other setup.
+
+PHP 5.2.1
+
+	// PEAR dependencies that need to be installed
+	- HTTP_Download 	1.1.1
+	- HTTP 			1.4.0
+	- HTTP_Header 		1.2.0
+	- Date			1.4.7
+	- Console_Getopt	1.2
+
+Apache 2.0.52-28.ent
+
+MySQL 4.1.20-1.RHEL4.1
+
+Nessus 3.x
+
+Hardware Requirements
+---------------------
+nessquik itself doesnt use too many resources, but the nessus rc files that it
+will generate can bring machines to their knees. For this reason I recommend the
+following hardware specs. Note that this recommendation is based off of our
+production nessus server
+
+	- 2 Dual core AMD Opterons at 2.4 GHz
+	- 8 Gig of RAM
+	- Gigabit NIC

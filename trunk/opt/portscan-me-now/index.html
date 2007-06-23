@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+                <title>nessquik portscan-me-now</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+                <meta name="copyright" content="&copy; GPL">
+                <meta name="Author" content="Tim Rupp">
+		<script language='javascript'>
+			function update_port_field() {
+				var port_range 		= document.getElementById('port_range').value;
+				var field_wapr 		= document.getElementById('wapr');
+				var field_woapr		= document.getElementById('woapr');
+
+				field_wapr.href		= "portscanmenow.php?SCANTYPE=A&PORT="+port_range;
+				field_woapr.href 	= "portscanmenow.php?SCANTYPE=NA&PORT="+port_range;
+			}
+		</script>
+                <link rel='stylesheet' type='text/css' href='templates/styles.css'>
+	</head>
+	<body>
+		<div style='margin-left: auto; margin-right: auto; width: 90%;'>
+		<div class='header'>
+			Scan your machine with nessquik's portscan-me-now!
+		</div>
+		<div id='main_click'>
+			<a href='index.html' class='surflinks padded'>home</a>
+			<a href='faq.html' class='surflinks padded'>faq</a>
+		</div>
+		<div style='clear: left; text-align: right;'>&nbsp;</div>
+
+		<table style='width: 100%;' cellpadding='0' cellspacing='0'>
+			<tr>
+				<td style='width: 1%;'><img src='images/left-blue.png' alt=''></td>
+				<td style='width: 98%;' valign='top'>
+					<div style='float: left; width: 100%; background-color: #6D84B4; height: 20px;'>&nbsp;</div>
+				</td>
+				<td style='width: 1%;'><img src='images/right-blue.png' alt=''></td>
+			</tr>
+		</table>
+
+<div style='margin: 10px 0px 10px 0px; border: 1px solid #fff; vertical-align: top;'>
+	<table style='width: 100%; margin-bottom: -8px;' cellpadding='0' cellspacing='0'>
+		<tr>
+			<td class='gray-top-left'><div style='width: 15px;'>&nbsp;</div></td>
+			<td class='gray-top-middle'>&nbsp;</td>
+			<td class='gray-top-right'><div style='width: 20px;'>&nbsp;</div></td>
+		</tr>
+	</table>
+	<table style='width: 100%; border-right: 1px solid #ccc; border-left: 1px solid #ccc;'>
+		<tr>
+			<td style='width: 100%; vertical-align: top;'>
+				<div style='padding: 20px;'>
+					<div style='text-align: center; color: #333; font-weight: bold;'>
+						PortScanMeNow Nmap Scanning
+					</div>
+					<table style='width: 100%;'>
+					<tr>
+						<td valign="top">
+							<p>
+							You may now quickly port scan your system. You can choose from either...
+							</p>
+							<ul>
+								<li>an aggressive scan which will try to determine the versions of software
+								listening on ports
+								<li>a non-aggressive scan
+							</ul>
+							<p>
+							Once you click the links below, please <i><b>DO NOT REFRESH YOUR WEB BROWSER</b></i>.
+							Doing so will restart the scan and prolong the display of the results.</p>
+							</p>
+							<p>
+							If you encounter problems, want to know more or need help interpreting 
+							the <I>PortScanMeNow</I> results, please consult the 
+							<a href="faq.html"><I>PortScanMeNow</I> FAQ</A>
+							</p>
+							<p>
+							<I>PortScanMeNow</I> will start immediately after clicking on a link below.
+							</p>
+						
+							<div style="padding-top: 10px; padding-bottom: 15px; text-align: center;">
+								<hr style="width: 90%; color: #d8dfea; background-color: #d8dfea; border: 0px;">
+							</div>
+
+							<table style='width: 80%;' align='center'>
+								<tr>
+									<td style='vertical-align: top;' align='center'>
+										<div style='text-align: left; padding-left: 50px;'>
+											<h5>Default PortScanMeNow</h5>
+											Scan all 65,535 TCP ports on your computer.
+											<ul>
+												<li><a href="portscanmenow.php?SCANTYPE=A">Aggressive scanning</a>
+												<li><a href="portscanmenow.php?SCANTYPE=NA">Non-aggressive scanning</a>
+											</ul>
+										</div>
+									</td>
+									<td style='width: 50%; vertical-align: top; border-left: 2px solid #ccc;' align='center'>
+										<div style='text-align: left; width: 70%; padding-left: 50px;'>
+											<h5>PortScanMeNow with port range</h5>
+											Choose a range and the links are updated automatically
+											<ul>
+												<li><a href="portscanmenow.php?SCANTYPE=A" id='wapr'>Aggressive scanning</a>
+												<li><a href='portscanmenow.php?SCANTYPE=NA' id='woapr'>Non-aggressive scanning</a>
+											</ul>
+											Choose a port range <input type='text' class='input_txt' value='1-65535' id='port_range' onKeyUp='update_port_field();' size='10' maxlength='11'>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table style='width: 100%; margin-top: -8px;' cellpadding='0' cellspacing='0'>
+		<tr>
+			<td class='gray-bottom-left'><div style='width: 15px;'>&nbsp;</div></td>
+			<td class='gray-bottom-middle'>&nbsp;</td>
+			<td class='gray-bottom-right'><div style='width: 20px;'>&nbsp;</div></td>
+		</tr>
+	</table>
+</div>
+		<table style='width: 100%;' cellpadding='0' cellspacing='0'>
+			<tr>
+				<td style='width: 1%;'><img src='images/left-blue.png' alt=''></td>
+				<td style='width: 98%;' valign='top'>
+					<div style='float: left; width: 100%; background-color: #6D84B4; height: 20px;'>&nbsp;</div>
+				</td>
+				<td style='width: 1%;'><img src='images/right-blue.png' alt=''></td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>

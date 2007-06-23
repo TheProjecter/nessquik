@@ -1,0 +1,15 @@
+Installation is simple once you have met the requirements listed in the REQUIREMENTS
+file. Follow the instructions below to setup the nessquik-client software.
+
+	1. Unpack the tarball to a directory of your choice. Preferably one that
+	   is not viewable from the web
+
+		[root@ovaltine ~]# tar zxvf nessquik-client.tar.gz
+
+	2. Update the confs/config-inc.php file to reflect the client connection
+	   information that was provided to you by CST.
+
+	3. Add the crontab entries in confs/crontab to the crontab of the scanner
+	   user you have selected
+
+Installation is complete, your scanner should start talking to the nessquik server automatically

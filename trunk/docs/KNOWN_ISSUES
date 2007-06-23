@@ -1,0 +1,17 @@
+Nessus client segfaults when talking to the Nessus server
+	I've observed this when the client is running version 2.2.6 and the server is running 2.2.9.
+	If you also run into this problem the symptoms you'll observe are
+
+		- output in nessquik-client logs/ directory shows a couple timestamps and one or
+		  no attacks.
+
+		- your nessusd.messages file contains a SIGSEGV when the scan is occuring
+
+	We recommend you update to 3.0.5 or greater. nessquik appears to work fine with the 3.x branch
+	based on the limited testing I've done.
+
+A Nessus scan that finds no holes, warnings, or notes returns _very_ empty results
+	If you schedule a scan and there are no results that have a severity level,
+	nessquik wont even display the machines that were scanned or the ports
+	that were found open. A fix currently does not exist, so it will need to
+	be addressed in a future release

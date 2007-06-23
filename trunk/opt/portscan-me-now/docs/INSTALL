@@ -1,0 +1,10 @@
+Installation is a snap
+
+1. Put the portscan-me-now directory in a web-accessible spot
+
+2. Add your webserver to the sudoers file to run nmap
+   (change www and the path to nmap to reflect your system setup)
+
+	www ALL=NOPASSWD: /usr/bin/nmap
+
+3. Point users at the site

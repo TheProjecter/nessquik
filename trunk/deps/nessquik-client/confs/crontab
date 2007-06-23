@@ -1,0 +1,6 @@
+# nessquik client crontab entries
+#
+# Add these to the scanner user's crontab, and make sure to change the paths
+# to the files that are run
+#
+*/5 * * * * /opt/nessquik-client/scripts/scan-runner.php >/dev/null 2>&1

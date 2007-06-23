@@ -1,0 +1,14 @@
+- there is the potential for a nessquik-client to have a different set of
+  available plugins than the nessquik server. If you subscribe to the free
+  plugin feed from Tenable, then your list of available plugins will definitely
+  be out of sync (assuming your master server uses the pay-for feed).
+
+  This is a known problem, but it's not nessquik's problem. nessquik will
+  introduce a "plugin differences" table in a future release that will
+  attempt to mitigate this problem before the scan is scheduled. Plugins
+  that are only available on certain servers will be marked as such.
+
+  Note that if you choose to use a plugin that doesnt exist on your server,
+  nothing "bad" will actually happen. nessquik will tell Nessus to use the
+  plugin, and Nessus will skip that plugin when it comes to find out it's
+  not installed on that server. No harm, no foul.

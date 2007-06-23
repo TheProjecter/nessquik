@@ -1,0 +1,26 @@
+Installation of scan-me-now is quick and generally easy. I've only ever
+run scan-me-now on the same server that runs the Nessus scanner. I
+guess it's possible to talk to remote Nessus servers, you should just
+need to change the login credentials and server name in the config-inc.php
+file.
+
+Installation
+------------
+
+	1. Move the scan-me-now directory to a place inside your webspace.
+
+	2. Change the paths and login info in the config-inc.php file
+
+	3. Open the scanmenow.rc file and change the occurrences of 'localhost'
+	   and server versions to reflect your installation.
+
+	4. Via sudo, give your Apache user the privilege to run nessus.
+	   For instance on my box I had to add the following with visudo
+
+		apache ALL=NOPASSWD: /usr/local/bin/nessus
+
+If you run into problems, I'll provide "best effort" support. Drop me
+a line at tarupp@fnal.gov.
+
+Thanks,
+Tim Rupp

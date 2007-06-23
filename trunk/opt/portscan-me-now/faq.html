@@ -1,0 +1,266 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+        <head>
+                <title>nessquik</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+                <meta name="copyright" content="&copy; GPL">
+                <meta name="Author" content="Tim Rupp">
+		<link rel='stylesheet' type='text/css' href='templates/styles.css'>
+                <script src="templates/js/prototype.js" type="text/javascript"></script>
+                <script src="templates/js/scriptaculous.js" type="text/javascript"></script>
+        </head>
+        <body>
+		<div style='margin-left: auto; margin-right: auto; width: 90%;'>
+		<div class='header'>
+			Frequently asked questions answered!
+		</div>
+		<div id='main_click'>
+			<a href='index.html' class='surflinks padded'>home</a>
+			<a href='faq.html' class='surflinks padded'>faq</a>
+		</div>
+		<div style='clear: left; text-align: right;'>&nbsp;</div>
+		<table style='width: 100%;' cellpadding='0' cellspacing='0'>
+			<tr>
+				<td style='width: 1%;'><img src='images/left-blue.png' alt=''></td>
+				<td style='width: 98%;' valign='top'>
+					<div style='float: left; width: 100%; background-color: #6D84B4; height: 20px;'>&nbsp;</div>
+				</td>
+				<td style='width: 1%;'><img src='images/right-blue.png' alt=''></td>
+			</tr>
+		</table>
+
+		<div style='display: none;'>&nbsp;</div>
+
+<div style='height: 100%; margin: 10px 0px 10px 0px; border: 1px solid #fff; vertical-align: top;'>
+	<table style='width: 100%; margin-bottom: -8px;' cellpadding='0' cellspacing='0'>
+		<tr>
+			<td class='gray-top-left'><div style='width: 15px;'>&nbsp;</div></td>
+			<td class='gray-top-middle'>&nbsp;</td>
+			<td class='gray-top-right'><div style='width: 20px;'>&nbsp;</div></td>
+		</tr>
+	</table>
+	<table style='width: 100%; border-right: 1px solid #ccc; border-left: 1px solid #ccc;'>
+		<tr>
+			<td style='width: 100%; vertical-align: top;'>
+				<div>
+					<div style='color: #333; font-weight: bold;'>
+	portscan-me-now
+</div>
+	<ol>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q1");'>
+					Are the PortScanMeNow results saved?
+				</span>
+				<div id='q1'>
+					<p>
+The results of your PortScanMeNow are not saved. However, the action of a scan being performed against your machine, along with the date and time, are recorded to syslog.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q2");'>
+					Can I abort the scan?
+				</span>
+				<div id='q2'>
+					<p>
+No. Once the scan starts, it will run until completion. If you close your web browser, the scan will continue to run against your machine, however the results will be lost.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q3");'>
+					Can I input additional machines to scan?
+				</span>
+				<div id='q3'>
+					<p>
+No. PortScanMeNow is intended to scan only the computer you are accessing the PortScanMeNow web page from.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q4");'>
+					Can I use portscan-me-now over HTTPS from the command line?
+				</span>
+				<div id='q4'>
+					<p>
+Yes, there are a couple ways.
+</p>
+<p>
+First, you can use wget and give it the no-check-cert argument
+</p>
+<div style='font-family: teletype; padding-left: 10px;'>
+wget --no-check-certificate http://my.host.com/portscan-me-now/portscanmenow.php
+</div>
+<p>
+You can also use the openssl command
+</p>
+<div style='font-family: teletype; padding-left: 10px;'>
+openssl s_client -connect my.host.com:443 -state -debug<br>
+GET /portscan-me-now/portscanmenow.php?SCANTYPE=F
+</div>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q5");'>
+					Can PortScanMeNow scan through my firewall
+				</span>
+				<div id='q5'>
+					<p>
+If your firewall blocks all inbound traffic, PortScanMeNow will not be able to detect open ports on your system. The good news is that others on the Internet probably will not be able to access your computer either. Because personal firewalls can accidentally be disabled, it is recommended to temporarily permit traffic from the PortScanMeNow server, perform the PortScanMeNow, then remove the firewall filters you previously added.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q6");'>
+					How do I use the aggressive scan option with wget?
+				</span>
+				<div id='q6'>
+					<p>
+Simple. You can do one of two things
+</p>
+<ul>
+<li>Surf to the portscanmenow page
+<li>Type in a port range
+<li>Right click and copy the link to the left for the type of scan you want to run. The port range is automatically added 
+</ul>
+<p>
+or
+</p>
+<ul>
+<li>Append the words &SCANTYPE=A to the end of the portscanmenow link for agressive scans
+<li>Append the words &SCANTYPE=NA to the end of the portscanmenow link for non-aggressive scans 
+</ul>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q7");'>
+					How do I use the port address range with wget?
+				</span>
+				<div id='q7'>
+					<p>
+Simple. You can do one of two things
+<ul>
+<li>Surf to the portscanmenow page
+<li>Type in a port range
+<li>Right click and copy the link to the left for the type of scan you want to run. The port range is automatically added
+</ul>
+or
+<ul>
+<li>Append the words &PORT=1-65535 to the end of the portscanmenow link. Obviously change the port range to be what you want
+</ul>
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q8");'>
+					How long will the scan take?
+				</span>
+				<div id='q8'>
+					<p>
+A PortScanMeNow scan usually takes only a minute to complete. However, depending on the security that is implemented on the client, the scan could take much longer (for instance if a client side firewall is used).
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q9");'>
+					I have a system that does not have a web browser (network device, web camera, turnkey system, etc). Can I still use PortScanMeNow?
+				</span>
+				<div id='q9'>
+					<p>
+If your system does not have a web browser available, but has the ability to Telnet FROM the system, you can execute the following to access PortScanMeNow over a raw Telnet connection (note that the output will be in HTML so you will need to preserve the output into a text file for offline viewing of the results)
+</p>
+To Perform a Port Scan:
+<div style='font-family: teletype; padding-left: 10px;'>
+telnet servername 80<br>
+GET /portscan-me-now/portscanmenow.php HTTP/1.0<br>
+'press enter'<br>
+'press enter'<br>
+</div>
+<p>
+In addition, if you have wget on your system, you can issue one of the command below which will save the output in a file named scan.html
+</p>
+<p>
+wget Port Scan:
+</p>
+<div style='font-family: teletype; padding-left: 10px;'>
+wget -O scan.html http://servername/portscan-me-now/portscanmenow.php
+</div>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q10");'>
+					I have waited for a long time and still have no results display. What should I do?
+				</span>
+				<div id='q10'>
+					<p>
+First, you should check the progress bar for your browser (this is usually a bar or spinning disk which displays when a web page is loading). If this progress bar is still active, the scan is still running. If this bar is absent and the test counter is 'stuck' at a number for a very long time, you can try to refresh the web page to restart the scan or you can contact the portscan-me-now administrator with the IP address you are scanning from along with the date and time and we will check for errors.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q11");'>
+					What browsers are supported?
+				</span>
+				<div id='q11'>
+					<p>
+PortScanMeNow has been tested with Internet Explorer, Firefox, Safari, Mozilla and elinks.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q12");'>
+					What happens if I press the Stop button or refresh the page?
+				</span>
+				<div id='q12'>
+					<p>
+If you press the STOP button on your browser or refresh the web page, your current scan will continue to run in the background but the results will not be displayed. If you refresh the web page, PortScanMeNow will start a new scan against your system while the previous scan continues to run. It is suggested to wait until the PortScanMeNow results are displayed before you navigate form the PortScanMeNow web page.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q13");'>
+					What is PortScanMeNow?
+				</span>
+				<div id='q13'>
+					<p>
+PortScanMeNow is a web process in which you can easily perform a Nmap portscan against your computer to determine a list of ports that your computer is listening on and what service is listening. PortScanMeNow can only be run against the computer you are accessing the PortScanMeNow web page from.
+</p>
+				</div>
+					<li style='padding-bottom: 10px;'>
+				<span class='helplink' onClick='Element.toggle("q14");'>
+					When I print the results, I get a weird output that looks like many items printed on top of itself. What is this?
+				</span>
+				<div id='q14'>
+					<p>
+This is an artifact of the CSS used to display the progress counter. We do not utilize any client side scripting to ensure portability across different platforms (including Telnet access). This artifact should not affect the printing of the actual test results, but if you experience difficulties, it is recommended to cut-and-paste the results table into another application first.
+</p>
+				</div>
+			</ol>
+
+	<script type='text/javascript'>
+		var counter = 14;
+
+	
+		for (i = 1; i <= counter; i++) {
+			Element.hide('q'+i);
+		}
+	</script>
+	
+
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table style='width: 100%; margin-top: -8px;' cellpadding='0' cellspacing='0'>
+		<tr>
+			<td class='gray-bottom-left'><div style='width: 15px;'>&nbsp;</div></td>
+			<td class='gray-bottom-middle'>&nbsp;</td>
+			<td class='gray-bottom-right'><div style='width: 20px;'>&nbsp;</div></td>
+		</tr>
+	</table>
+</div>
+		<table style='width: 100%;' cellpadding='0' cellspacing='0'>
+			<tr>
+				<td style='width: 1%;'><img src='images/left-blue.png' alt=''></td>
+				<td style='width: 98%;' valign='top'>
+					<div style='float: left; width: 100%; background-color: #6D84B4; height: 20px;'>&nbsp;</div>
+				</td>
+				<td style='width: 1%;'><img src='images/right-blue.png' alt=''></td>
+			</tr>
+		</table>
+
+		</div>
+	</body>
+</html>

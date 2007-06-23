@@ -1,0 +1,156 @@
+Read the REQUIREMENTS documentation before you even so much as glance at this!
+
+This document is a (highly) distilled version of the more complete nessquik
+2.5 user and administration guides that can be found at the nessquik website
+
+	http://home.fnal.gov/~tarupp/
+
+I recommend that you consult those documents for complete, up-to-date, versions
+of install, upgrade, and usage steps.
+
+
+
+Contents
+--------
+1. Pre-installation Path Default Locations
+2. Nessus Installation
+3. Website Installation
+4. Create a Scanner User
+5. Post Installation Configuration
+6. nessquik-client Installation
+7. scan-me-now Installation
+8. portscan-me-now Installation
+
+
+1. Pre-installation Path Default Locations
+   ---------------------------------------
+
+	You'll need to determine several directory locations before you continue.
+	On a base RHEL 4.x system, the default directories are listed below. For
+	this document I assume you're using a RHEL 4.x system.
+
+		/opt/nessus				Nessus
+		/opt/nessus/lib/nessus/plugins/		Nessus Plugins
+		/var/www/html/				Apache web root
+		/var/www/html/nessquik			nessquik
+
+
+2. Nessus Installation
+----------------------
+
+	nessquik has been tested so far with Nessus 2.2.6 -> 3.0.5. However with the release
+	of 2.5, all of my development and production machines have moved on to 3.x. With that
+	said, I personally can't provide continued support for 2.x.
+
+	- RPM
+
+		1.	Download the latest RPM installer for Nessus from nessus.org
+
+		2.	Install the RPM
+
+				rpm -Uvh Nessus-3.0.5-es4.i386.rpm
+
+
+3. Website Installation
+   --------------------
+
+	1.	Extract the nessquik tarball
+
+			tar zxvf nessquik-2.5.tar.gz
+
+	2.	Move the contents of the package to your web space
+
+			mv nessquik-2.5 /var/www/html/
+
+	3. 	Change to the nessquik directory to continue the rest of the installation
+
+	4.	Change the ownership of the templates_c directory to be writable by your webserver
+
+			chown -R apache:apache templates_c
+
+	5.	Change the contents of the config-inc.php file to reflect your setup
+
+	6. 	Create the SQL tables.
+
+			php setup/setup.php
+
+	7. 	If there are no errors, then run the update-plugins.php script from the command line
+
+			sudo php scripts/update-plugins.php
+
+	8. 	If there are no errors, then run the nasl_name_updater.php file from the command line
+
+			sudo php scripts/nasl_name_updater.php
+
+	9.	Add the entries in the provided crontab file into your own crontab. These are
+		necessary because they control the nightly updates to the database tables and
+		the rescheduling of scans.
+
+
+4. Create a Scanner User
+   ---------------------
+
+	nessquik requires special privileges(because of Nessus and nmap) to run the scans that you
+	schedule. These privileges can be granted via sudo.
+
+	In the past, I recommended you give the web user the sudo privileges. In nessquik 2.5 however,
+	an API exists that allows the nessquik-client code to be separated from the server. With
+	this in mind, my current recommendation is to NOT grant the necessary sudo privileges to the
+	web user. Instead, create a special system account specifically for scanning.
+
+		1.	Create the system account
+
+				useradd scanner
+
+		2.	Using visudo, grant the right to run nessus and nmap without a password, to the
+			special account you created. Here's an example line from a sudoers file
+
+				scanner ALL=NOPASSWD: /usr/local/bin/nessus,/usr/bin/nmap
+
+			where 'scanner' is the special scanner user
+
+
+5. Post Installation Configuration
+   -------------------------------
+
+	1. 	Change the ownership of all the directories to root:root except for the templates_c/
+		directory.
+
+	2.	ACL off the entire nessquik directory with a .htaccess to only allow connections
+		from your network. Don't allow nessquik to face the internet directly without these
+		htaccess controls.
+
+
+6. nessquik-client Installation
+   -----------------------------
+
+	nessquik requires at least one nessquik-client be installed to schedule scans. This idea
+	does not deviate from previous nessquik releases; a client has always been used.
+
+	Installation of the nessquik client is simple.
+
+	1.	Move the folder nessquik-client/ in the deps/ directory into /opt or some place similar.
+		Do not place it in your web root.
+
+	2.	Inside the directory nessquik-client/confs/ is a file called crontab. Copy the contents
+		of this file to the crontab for the scanner user. Make sure to change the directory paths 
+		for these crontab entries to reflect your installation
+
+	3.	In the web interface, under the Admin Settings section, create a new scanner and assign
+		'All Groups' to it.
+
+	4.	Copy the client key that is generated (you can view it under the 'change' link) into the
+		config-inc.php file in the scanner's confs/ directory.
+
+	5.	Your scanner should start running jobs as they are created.
+
+7. scan-me-now Installation
+   ------------------------
+
+	For scan-me-now install documentation, see the docs folder of scan-me-now
+
+
+8. portscan-me-now installation
+   ----------------------------
+
+	For portscan-me-now install documentation, see the docs folder of portscan-me-now
