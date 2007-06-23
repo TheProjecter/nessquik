@@ -1,0 +1,15 @@
+nessquik was a quick solution to a problem we were having with developing a web front end for Nessus.
+
+No viable solutions existed. There was a project called InProtect, but it didnt scale well when it
+needed to handle all of the 11,000+ plugins that Nessus comes with.
+
+Also, we needed something that could be set up fast, would look simple, and would have stellar
+performance. This was what I came up with.
+
+nessquik uses AJAX methods to query a couple database tables and create .nessusrc like files that
+our scanner farms can then use to scan a range of systems.
+
+The interface is very fast and flexible. It allows you to build a nessusrc file quickly and meets
+our needs.
+
+We hope you find it useful too!

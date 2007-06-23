@@ -1,0 +1,38 @@
+Thanks for trying portscan-me-now
+
+portscan-me-now is a simple wrapper around the program nmap. You can think of it
+as a "point and shoot" tool because all you need to do to use it is point your
+network enabled app at it and it will run an nmap scan against that device.
+
+portscan-me-now is great for giving end users a way to quickly and easily run
+a portscan against their devices without having any knowledge of how to run nmap.
+
+Also, if security tools such as nmap, are in a list of "controlled" products at
+your site, portscan-me-now allows you to offer that controlled functionality back
+to the end user without the need for them to install nmap on their systems.
+
+portscan-me-now can be used from any of a number of network enabled apps. I say this
+because browsers are only the tip of the iceberg. portscan-me-now supports all
+browsers, wget, and even telnet.
+
+portscan-me-now's functionality can be wrapped inside scripts too, and can be
+use programatically (such as in curl or mechanize). Just point yourself at the 
+portscan-me-now page and you will get your results.
+
+portscan-me-now does not use all the features of nmap. Instead it focuses on two
+
+	- Aggressive scanning
+	- Port range
+
+Oftentimes if a network enabled device is going to die due to network activity,
+nmap's -A (aggressive) scanning will find that bug in the app. Aggressive scanning
+is also much more capable of determining the software listening on a given port.
+
+Port ranges are the other obvious feature that portscan-me-now includes. This
+allows you to narrow the scan down if you are only concerned with a certain number
+of ports.
+
+So go ahead and give portscan-me-now a try, and let me know if you find it useful
+
+Thanks,
+Tim Rupp

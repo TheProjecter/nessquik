@@ -1,0 +1,6 @@
+#compare_container_right_step1,#compare_container_right_step2 {
+	width: 100%;
+	padding-left: 5px;
+	height: 400px;
+	overflow: auto;
+}

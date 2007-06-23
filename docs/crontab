@@ -1,0 +1,14 @@
+Insert the following into your crontab file. Your
+paths may be different. Change them as necessary.
+
+If you are using Nessus 2.x
+
+01 00 * * * /usr/local/sbin/nessus-update-plugins
+10 00 * * * /var/www/html/nessquik/scripts/update-plugins.php && /var/www/html/nessquik/scripts/nasl_name_updater.php 2>&1
+*/5 * * * * /var/www/html/nessquik/scripts/cron.php >/dev/null 2>&1
+
+
+If you are using Nessus 3.x
+
+10 00 * * * /var/www/html/nessquik/scripts/update-plugins.php && /var/www/html/nessquik/scripts/nasl_name_updater.php 2>&1
+*/5 * * * * /var/www/html/nessquik/scripts/cron.php >/dev/null 2>&1

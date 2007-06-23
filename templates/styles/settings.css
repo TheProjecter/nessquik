@@ -1,0 +1,23 @@
+.settings_by_computer {
+	height: 470px;
+	overflow: auto;
+}
+
+.settings_by_cluster {
+	height: 470px;
+	overflow: auto;
+}
+
+.settings_by_saved {
+	height: 470px;
+	overflow: auto;
+}
+
+.settings_by_whitelist {
+	height: 470px;
+	overflow: auto;
+}
+
+.settings_by_list {
+	vertical-align: top;
+}

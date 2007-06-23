@@ -1,0 +1,127 @@
+2.5
+	- add: ability to cancel individual scans as they are occuring
+	  (Requires PHP 5 and proc_terminate)
+	- add: scanmenow code made available
+	- add: portscanmenow code made available
+	- add: ability to create special plugin profiles. These are groups of plugins
+	  that can more or less be considered 1 individual plugin. These groups can be
+	  created on a per division basis
+	- add: plugins can be added and removed from an existing scan profile
+	- add: devices can be added and removed from an existing scan profile
+	- add: all possible scan settings can be modified at scan creation time
+	- add: ability to view scan history
+	- add: results can be viewed, saved, or emailed from any format from the
+	  scan history page or the 'scans' page
+	- add: delete individual scan results from the scan history
+	- add: upgrade scripts to support upgrading the database from version 2.0 to 2.5
+	- add: compare scan results in a scan profile to see what has changed
+	- add: jobs XML-RPC API added
+	- add: sysops XML-RPC API added
+	- add: client key generation at scanner creation time
+	- add: ability to regenerate client keys for a scanner
+	- add: ability to download the nessusrc file through the admin interface that 
+	  will be generated for a scan profile.
+	- add: ability to download the machine list file through the admin interface
+	  that will be generated for a scan profile.
+	- add: NBE output can be viewed, saved and emailed from the scans page and
+	  admin interfaces.
+	- add: view all scans for all users from the admin scans page
+	- add: narrow scans list by user name
+	- add: view scan status counts for all users
+	- add: view any and all scan results for all users from the admin scans page
+	- add: reschedule scans for any user from the admin page
+	- add: scan-me-now has it's own FAQ
+	- add: portscan-me-now has it's own FAQ
+	- add: ability to search for plugin by nasl name in search box. Start typing
+	  and add a '.nasl' to your search term.
+	- add: a vast majority of the code is now documented.
+	- add: first draft of the nessquik user manual is available
+	- add: first draft of the nessquik developer's manual is available
+	- add: first draft of the nessquik metric developer's manual is available
+	- add: more logging and debug code has been added for troublshooting
+	- add: ability to create an arbitrary number of scanners and assign scans to them
+	- add: HTTP Basic authentication support to the nessquik client code
+	- add: ability to specify "short" ranges in the text field. ex: 172.16.1.0-254
+
+	- change: calendar has been replaced with click fields
+	- change: clock has been replace with click fields
+	- change: scan results on the scans page are for the _latest_ scan only. To
+	  view previous scan results, choose to view the scans history
+	- change: new interface. I hope this one can support growth better than the
+	  original design. I think it's more aestheic than the first interface too
+	- change: modded the processing script to support adding any type of device
+	  to your scan profile
+	- change: if a hostname is specified in the 'list of machines' it is no longer
+	  translated to an IP address at processing time. This was decided because if an IP is
+	  stored, then a dhcp client could change it's IP address and unknowingly the admin
+	  performing the Nessus scans could be scanning the wrong machine
+	- change: nessquik-client modified to use the jobs API. FYI this will put
+	  a load on your web server.
+	- change: scriptaculous updated to 1.7.0 and several fixes were added by me
+	  for bugs that I found. These are (or will be) fixed in 1.7.1 which will
+	  be included in 2.6
+	- change: help page has been moved to the database and many more topics
+	  have been added for individual users and admins
+	- change: I don't want to support IE6 so if it happens to work right, then good
+	  for you. Please do not send me email concerning problems with nessquik
+	  in IE6
+	- change: nessquik's search box has been given a very slight delay to prevent
+	  a lot of calls from being sent to the backend if you're typing a word.
+	  ex. typing the word 'web' will result in 1 call instead of 3 if you type it
+	  semi-quickly.
+	- change: the PEAR dependencies are now included with nessquik. There is no
+	  need to install them.
+
+	- fix: incorrectly saving plugin families that have colons in their name
+	- fix: scans page has become much more lightweight. Firefox should no longer
+	  lock up if you camp the settings page for a long time
+	- fix: nessus reports have been modified from original source to be 100% HTML
+	  4.01 strict compliant
+	- fix: nessus html reports with more than one target were not being generated
+	  100% correctly
+	- fix: jumping progress bar should no longer occur
+	- fix: I guess I didn't understand the meaning of SCANNER_SET in the nessusrc
+	  file, so I've fixed the way the rc file is created.
+	- fix: setup scripts are easier to use
+	- fix: too many bugs to list. I have over 1600 subversion commits between this
+	  release and the 2.0 release though, so a LOT has changed.
+
+	- remove: more options button has been replaced with full settings configuration
+
+2.0 r464
+	- updated install documentation. Forgot to mention the sudoers file edit and making sure to set
+	  the scan directory as writable by the web user
+	- added full description search for plugins. Results are appended to the end of the list
+	- added several error messages if services arent running
+	- save scanning criteria (for reuse later)
+	- html formatted email
+	- state checking (progress of job)
+	- task listing (what active jobs are queued/running from the user or against a machine/cluster/network range)
+	- nmap scanning port ranges (NMAP default, specified by user, ranges)
+	- alternate email-to of reports
+	- scheduled scanning (one time and reccuring) via included cron.php script
+	- nmap options (ping/no ping). SYN and Full Connect (Syn/Ack/Rst) will be pushed off until later
+	  because there hasnt been much of a desire for that functionality.
+	- ability to scan vhosts
+	- much more of the interface has been simplified. Certain features are not shown if you have
+	  no data associated with those features
+	- help page
+	- cancel and delete jobs
+	- full or short plugin listings
+	- acknowledgement of scans going to be scheduled via list (on the processing page) now more
+	  accurately show which machines are going to be scanned and which are not.
+	- scan results can be saved to the system for later viewing
+	- ability to download scan results in either text or html format
+	- ability to specify multiple cgi-bin directories to scan if needed
+	- ability to specify specific times of day to run the scans (both one-time scan and recurring scheduled scan)
+	- ability to view scan results, either text or html, in the browser IF the scan results are saved
+	- re-send email of scan results if saved
+	- change the name of the scan profile from the settings page
+	- numerous other bugfixes
+
+1.0 r150
+	- initial release
+	- scan results sent via email
+	- support for ip addresses, hostnames, cidr blocks and ip ranges
+	- scan maker processes all types of plugins (individual, family, severity and all)
+	- works in PHP 4 and PHP 5

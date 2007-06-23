@@ -1,0 +1,47 @@
+Contents
+
+1. Scanner user
+2. PHP support
+3. Associate your client
+4. Special purpose client? Contact CST
+
+
+1. Scanner user
+
+	The scanning scripts need to run the nessus command with root privileges. If you will be running
+	your scanner cron jobs as root, then there is no further configuration needed. Otherwise, you need
+	to give root privileges to the specific Nessus command for the user account you are using. sudo
+	can be used for this. The following line can be added to the sudoers file by running /usr/sbin/visudo
+
+		apache ALL=NOPASSWD: /usr/local/bin/nessus
+
+	Replace the username 'apache' with the user that your scanner will be running as. Also, check to
+	make sure that your path to Nessus is correct.
+
+	After you have added this sudo entry, add the cron jobs to your user's crontab
+
+		*/5 * * * * /path/to/nessquik-client/scripts/scan-runner.php >/dev/null 2>&1
+
+
+
+2. PHP support
+
+	PHP 5 is required by nessquik.
+
+
+3. Associate your client
+
+	After you've completed the previous steps, you'll need to contact CST so that you can associate your 
+	scanner with our nessquik server.
+
+	Groups that request this access will be provided with a client key. You should supplement the CLIENT_KEY
+	value in your scanner's config-inc.php file with the key supplied to you. Once that is done, you will be
+	able to connect to the nessquik server and query for scans relevant to your scanner.
+
+
+
+4. Special purpose client? Contact CST
+
+	If you're installing this client for a special purpose other than just being able to scan behind
+	a restrictive network device, then you should work with CST to make sure that your needs are met
+	to accomplish the goal you had in mind.

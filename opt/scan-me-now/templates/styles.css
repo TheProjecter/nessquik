@@ -1,0 +1,254 @@
+html, body {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 0;
+	height: 100%;
+	border: none;
+}
+
+.header {
+	font-weight: bold;
+	width: 49%;
+	float: left;
+}
+
+.input_txt {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+.helplink {
+	color: blue;
+	text-decoration: none;
+	cursor: pointer;
+} 
+
+.surflinks {
+	padding: 5px;
+	color: blue;
+	text-decoration: none;
+	cursor: pointer
+}
+
+.padded { padding: 5px; }
+
+#main_click {
+	width: 50%;
+	float: left;
+	text-align: right;
+}
+
+#processing_output {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.gray-top-left {
+	width: 1%;
+	background-image: url("../images/gray-line-tl.png");
+	background-repeat: no-repeat;
+}
+
+.gray-top-middle {
+	width: 100%;
+	background-image: url("../images/gray-middle-top.png");
+	background-repeat: repeat-x;
+}
+
+.gray-top-right {
+	width: 1%;
+	background-image: url("../images/gray-line-tr.png");
+	background-repeat: no-repeat;
+}
+
+.gray-bottom-left {
+	width: 1%;
+	background-image: url("../images/gray-line-bl.png");
+	background-repeat: no-repeat;
+}
+.gray-bottom-middle {
+	width: 100%;
+	background-image: url("../images/gray-middle-bottom.png");
+	background-repeat: repeat-x;
+}
+
+.gray-bottom-right {
+	width: 1%;
+	background-image: url("../images/gray-line-br.png");
+	background-repeat: no-repeat;
+}
+
+/** For the non-javascript version of scan-me-now */
+.progbar {
+	height: 60px;
+	width: 514px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.baritems {
+	padding-top: 10px;
+	padding-left: 7px;
+	text-align: left;
+}
+
+.percentbox {
+	background-color: #FFFFFF;
+	position: absolute;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+	height: 28px;
+	font-family: 'Trebuchet MS', Arial, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #999999;
+	text-align: center;
+}
+
+.percentbox2 {
+	background-color: #FFFFFF;
+	font-family: 'Trebuchet MS', Arial, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #999999;
+	text-align: center;
+}
+
+/** Moved the nessus styles out to this stylesheet **/
+#nessus body {
+	background-color: #fff;
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus a {
+	text-decoration: none;
+}
+
+#nessus a:visited {
+	color: #0000cf;
+	text-decoration: none;
+}
+
+#nessus a:link {
+	color: #0000cf;
+	text-decoration: none
+}
+
+#nessus a:active {
+	color: #0000cf;
+	text-decoration: underline;
+}
+
+#nessus a:hover {
+	color: #0000cf;
+	text-decoration: underline;
+}
+
+#nessus ol {
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus ul {
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus p {
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus td {
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus tr {
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus th {
+	color: #333;
+	font-family: tahoma,helvetica,sans-serif;
+}
+
+#nessus font.title {
+	background-color: #fff;
+	color: #363636;
+	font-family: tahoma,helvetica,verdana,lucida console,utopia;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+#nessus font.sub {
+	background-color: #fff;
+	color: #000;
+	font-family: tahoma,helvetica,verdana,lucida console,utopia;
+	font-size: 10pt;
+}
+
+#nessus font.layer {
+	color: #f00;
+	font-family: courrier,sans-serif,arial,helvetica;
+	font-size: 8pt;
+	text-align: left;
+}
+
+#nessus td.title {
+	background-color: #A2B5CD;
+	color: #555;
+	font-family: tahoma,helvetica,verdana,lucida console,utopia;
+	font-size: 10pt;
+	font-weight: bold;
+	height: 20px;
+	text-align: right;
+}
+
+#nessus td.sub {
+	background-color: #DCDCDC;
+	color: #555;
+	font-family: tahoma,helvetica,verdana,lucida console,utopia;
+	font-size: 10pt;
+	font-weight: bold;
+	height: 18px;
+	text-align: left;
+}
+
+#nessus td.content {
+	background-color: #fff;
+	color: #000;
+	font-family: tahoma,arial,helvetica,verdana,lucida console,utopia;
+	font-size: 8pt;
+	text-align: left;
+	vertical-align: middle;
+}
+
+#nessus td.default {
+	background-color: #fff;
+	color: #000;
+	font-family: tahoma,arial,helvetica,verdana,lucida console,utopia;
+	font-size: 8pt;
+}
+
+#nessus td.border {
+	background-color: #ccc;
+	color: #000;
+	font-family: tahoma,helvetica,verdana,lucida console,utopia;
+	font-size: 10pt;
+	height: 25px;
+}
+
+#nessus td.border-hilight {
+	background-color: #ffc;
+	color: #000;
+	font-family: verdana,arial,helvetica,lucida console,utopia;
+	font-size: 10pt;
+	height: 25px;
+}

@@ -1,0 +1,114 @@
+html, body {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 0;
+	height: 100%;
+	border: none;
+}
+
+.header {
+	font-weight: bold;
+	width: 49%;
+	float: left;
+}
+
+.input_txt {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+.helplink {
+	color: blue;
+	text-decoration: none;
+	cursor: pointer;
+} 
+
+.surflinks {
+	padding: 5px;
+	color: blue;
+	text-decoration: none;
+	cursor: pointer
+}
+
+.padded { padding: 5px; }
+
+#main_click {
+	width: 50%;
+	float: left;
+	text-align: right;
+}
+
+.gray-top-left {
+	width: 1%;
+	background-image: url("../images/gray-line-tl.png");
+	background-repeat: no-repeat;
+}
+
+.gray-top-middle {
+	width: 100%;
+	background-image: url("../images/gray-middle-top.png");
+	background-repeat: repeat-x;
+}
+
+.gray-top-right {
+	width: 1%;
+	background-image: url("../images/gray-line-tr.png");
+	background-repeat: no-repeat;
+}
+
+.gray-bottom-left {
+	width: 1%;
+	background-image: url("../images/gray-line-bl.png");
+	background-repeat: no-repeat;
+}
+.gray-bottom-middle {
+	width: 100%;
+	background-image: url("../images/gray-middle-bottom.png");
+	background-repeat: repeat-x;
+}
+
+.gray-bottom-right {
+	width: 1%;
+	background-image: url("../images/gray-line-br.png");
+	background-repeat: no-repeat;
+}
+
+/** For the non-javascript version of portscan-me-now */
+.progbar {
+	height: 60px;
+	width: 514px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.baritems {
+	padding-top: 10px;
+	padding-left: 7px;
+	text-align: left;
+}
+
+.percentbox {
+	background-color: #FFFFFF;
+	position: absolute;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+	height: 28px;
+	font-family: 'Trebuchet MS', Arial, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #999999;
+	text-align: center;
+}
+
+.percentbox2 {
+	background-color: #FFFFFF;
+	font-family: 'Trebuchet MS', Arial, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #999999;
+	text-align: center;
+}

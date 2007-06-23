@@ -1,0 +1,403 @@
+html, body {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	margin: 5px;
+	padding: 0;
+	height: 100%;
+	border: none;
+	text-align: center;
+}
+
+#macro_list {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 250px;
+	height: 150px;
+	background-color: #fff;
+	border: 1px #000 solid;
+	margin-top: -75px; /* half of the height */
+	margin-left: -125px; /* half of the width */
+	padding: 10px;
+}
+
+#view_output, #compare_results {
+	font-size: small;
+	height: 500px;
+	background-color: #fff;
+	overflow: auto;
+}
+
+#header {
+	font-weight: bold;
+	width: 49%;
+	float: left;
+}
+
+#main_click {
+	width: 50%;
+	float: left;
+	text-align: right;
+}
+
+.bullet_list {
+	width: 100%;
+	background-color: #fff;
+	padding: 5px;
+}
+
+.sidechoice {
+	border-bottom: #ccc solid 1px;
+	color: blue;
+	cursor: pointer;
+}
+
+.sidechoice:hover {
+	background-color: #3B5998;
+	color: #fff;
+}
+
+.padded { padding: 5px; }
+
+.search_plugin {
+        background: url('../../images/magglass.png') no-repeat 3px 7px;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	color: #777;
+}
+
+.search_plugin_padding {
+        padding-left: 17px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#choose_setting {
+        background: url('../../images/magglass.png') no-repeat 3px 7px;
+        padding-left: 17px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	color: #777;
+	border: 1px solid #999;
+}
+
+.input_txt {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+.input_select {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+.input_btn {
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	border: 1px solid #999;
+	cursor: pointer;
+}
+
+#list_of_plugins,#list_of_groups {
+	height: 440px;
+	width: 100%;
+	background-color: #fff;
+	overflow: auto;
+	margin-top: 5px;
+	margin-left: 1px;
+}
+
+#selected_plugins,#selected_groups {
+	height: 440px;
+	width: 100%;
+	background-color: #fff;
+	overflow: auto;
+	margin-top: 5px;
+	margin-left: 1px;
+}
+
+.hyperlink {
+	font-size: 11px;
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.by_computer {
+	height: 430px;
+	overflow: auto;
+}
+
+.by_cluster {
+	height: 430px;
+	overflow: auto;
+}
+
+.by_saved {
+	height: 430px;
+	overflow: auto;
+}
+
+.by_whitelist {
+	height: 430px;
+	overflow: auto;
+}
+
+#work_container {
+	text-align: left;
+	width: 90%;
+	margin-bottom: 40px;
+	margin-left: 40px;
+	margin-right: 40px;
+	border: 1px solid #ccc;
+	height: 400px;
+	background-color: #f3f3f3;
+}
+
+.wlactions {
+	text-align: center;
+	vertical-align: top;
+	font-size: small;
+	width: 20%;
+}
+
+.general_title {
+	padding-left: 10px;
+	color: #333; 
+	font-weight: bold; 
+	font-size: 13px;
+}
+
+.fscan1 {
+	float: left;
+	width: 5%;
+	text-align: center;
+}
+
+.fscan2 {
+	float: left;
+	width: 30%;
+}
+
+.fscan_header {
+	float: left;
+	width: 30%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.rscan1 {
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+.rscan2 {
+	float: left;
+	width: 30%;
+	vertical-align: top;
+}
+
+.rscan_header {
+	float: left;
+	width: 30%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.rscan_progress {
+	position: absolute;
+	background-color: #6d84B4;
+	height: 20px;
+	z-index: 0;
+}
+
+.rscan_difference {
+	position: absolute;
+	background-color: #ccc;
+	height: 20px;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	z-index: 1;
+}
+
+.rscan_prog_text {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	z-index: 2;
+}
+
+.nscan1 {
+	float: left;
+	width: 5%;
+	text-align: center;
+}
+
+.nscan2 {
+	float: left;
+	width: 30%;
+}
+
+.nscan_header {
+	float: left;
+	width: 30%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.settings_key {
+	color: #333; 
+	font-weight: bold; 
+	cursor: pointer;
+}
+
+.pscan1 {
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+.pscan2 {
+	float: left;
+	width: 30%;
+	vertical-align: top;
+}
+
+.pscan_header {
+	float: left;
+	width: 30%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.help_description {
+	width: 70%;
+	padding-left: 20px;
+}
+
+#list {
+	width: 100%;
+	height: 400px;
+	border: 0px;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+	font-size: 11px;
+	color: #999;
+	background-color: #fff;
+	text-align: center;
+}
+
+.surflinks {
+	padding: 5px;
+	color: blue;
+	text-decoration: none;
+	cursor: pointer
+} 
+
+.helplink {
+	color: blue;
+	text-decoration: none;
+	cursor: pointer;
+} 
+
+#info_list {
+	width: 100%;
+	background-color: #f7f7f7;
+	border-top: 1px solid #ccc;
+	height: 100%;
+}
+
+.gray-top-left {
+	width: 1%;
+	background-image: url("../../images/gray-line-tl.png");
+	background-repeat: no-repeat;
+}
+
+.gray-top-middle {
+	width: 100%;
+	background-image: url("../../images/gray-middle-top.png");
+	background-repeat: repeat-x;
+}
+
+.gray-top-right {
+	width: 1%;
+	background-image: url("../../images/gray-line-tr.png");
+	background-repeat: no-repeat;
+}
+
+.gray-bottom-left {
+	width: 1%;
+	background-image: url("../../images/gray-line-bl.png");
+	background-repeat: no-repeat;
+}
+.gray-bottom-middle {
+	width: 100%;
+	background-image: url("../../images/gray-middle-bottom.png");
+	background-repeat: repeat-x;
+}
+
+.gray-bottom-right {
+	width: 1%;
+	background-image: url("../../images/gray-line-br.png");
+	background-repeat: no-repeat;
+}
+
+.small_hr_underline {
+	width: 30%;
+	text-align: right;
+	margin: 0 0 0 auto;
+	color: #ccc;
+	background-color: #ccc;
+	border: 0px;
+	height: 1px;
+}
+
+#processing_steps {
+	width: 100%;
+	text-align: left;
+}
+
+#whitelist_add,#whitelist_copy,#whitelist_rename {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+div.viewdiv {
+	padding: 3px 1em;
+}
+
+div.viewdiv:hover {
+	background-color: #3B5998;
+	color: #fff;
+	cursor: pointer;
+}
+
+#dropmenudiv {
+	position:absolute;
+	border:1px solid #ccc;
+	z-index:100;
+	width: 65px;
+	background-color: #fff;
+}
+
+#dropmenudiv a {
+	width: 100%;
+	text-indent: 3px;
+	padding: 1px 0;
+	text-decoration: none;
+	color: #000;
+}
+
+#dropmenudiv a:hover {
+	background-color: #3B5998;
+	color: #fff;
+	cursor: pointer;
+}
