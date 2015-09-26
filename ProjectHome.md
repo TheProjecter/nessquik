@@ -1,0 +1,1 @@
+nessquik is a fast web frontend for the Nessus Vulnerability Scanner. It uses modern javascript technologies to deliver a responsive, easy to use interface that lets people quickly schedule scans using Nessus.
